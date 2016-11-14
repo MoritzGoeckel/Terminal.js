@@ -1,0 +1,30 @@
+<html>
+
+<head>
+<title>Board</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<div id="container">
+		<span id="terminalField"></span>
+		<span id="inputField"></span>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="sketch.js"> </script>
+		
+		<script src="terminal.js"> </script>
+		<script src="particles.js"> </script>
+		<script>
+			setMaxLines(10);
+			printLine("Do an input", "red");
+			addInputListener(function(line){
+				printLine("You: " + line, "white");
+				spawnParticles();
+			});
+		</script>
+	</div>
+</body>
+
+
+</html>

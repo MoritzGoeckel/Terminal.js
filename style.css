@@ -1,0 +1,38 @@
+@font-face {
+    font-family: "Dejavu";
+    src: url("font.ttf") format("truetype");
+}
+
+body{
+	font-family: "Dejavu", Verdana, Tahoma;
+	background: black;
+}
+
+.green{
+	color: #00FF00;
+}
+
+.white{
+	color: white;
+}
+
+.red{
+	color: red;
+}
+
+.blue{
+	color: blue;
+}
+
+#container{
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+canvas{
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
