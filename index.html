@@ -18,7 +18,7 @@
 					let number = 10;
 					printLine(number, "flag")
 					let interval = setInterval(function(){
-						updateLine(--number)
+						updateLine(--number, "flag")
 						if(number == 0){
 							clearInterval(interval);
 							printLine("Done!", "highlight")
@@ -43,6 +43,8 @@
 						printLine("hallo", "highlight_big");
 					}
 					
+					if(line == "clear")
+						clear();
 				});
 			</script>
 		</div>

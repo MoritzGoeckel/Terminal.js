@@ -31,7 +31,6 @@ $().ready(function(){
 			renderInput(); 
 		}, 500);
 		
-	console.log("Init finished");
 });
 
 inputIndex = 0;
@@ -146,14 +145,12 @@ function addInputListener(func)
 
 var desiredHight = null;
 
-function updateLine(str){
-	console.log("Updating " + str)
-	$("#terminalField").find("span").last().text(str);
+function updateLine(str, cssClass){
+	$("#terminalField").find("span").last().replaceWith($("<span class='"+cssClass+"'>" + str + "</span>"));
 }
 
 function printLine(str, cssClass)
 {
-	console.log("Printing " + str)
 	var start = "<span class='"+cssClass+"'>";
 	var end = "</span>";
 	
@@ -167,4 +164,8 @@ function printLine(str, cssClass)
 		$("#terminalField").find("span").first().remove();
 		$("#terminalField").find("br").first().remove();		
 	}
+}
+
+function clear(){
+	$("#terminalField").html("");
 }
