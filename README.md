@@ -2,7 +2,7 @@
 A terminal like UI for the web
 
 # How does it look?
-![Terminal JS visualization](https://raw.githubusercontent.com/MoritzGoeckel/TerminalJS/master/terminal_example_visualization.gif)
+![Terminal JS visualization](https://raw.githubusercontent.com/MoritzGoeckel/TerminalJS/old_design/terminal_example_visualization.gif)
 
 # Example usage
 ```html
