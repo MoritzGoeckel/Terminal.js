@@ -1,4 +1,4 @@
- ctrlDown = false;
+ctrlDown = false;
 
 $().ready(function(){
 	
@@ -30,10 +30,8 @@ $().ready(function(){
 			
 			renderInput(); 
 		}, 500);
-	
-	desiredHight = $("#container").height()
-	
-	console.log("Init finished " + desiredHight);
+		
+	console.log("Init finished");
 });
 
 inputIndex = 0;
@@ -154,25 +152,23 @@ function setMaxLines(lines)
 	maxLines = lines;
 }
 
+outputArray = [];
+
+var desiredHight = null;
+
 function printLine(str, cssClass)
 {
 	var start = "<span class='"+cssClass+"'>";
 	var end = "</span>";
 	
-	output += start + str + end + "<br />";
-	var outputLineArray = output.split('<br />');
-	
-	//var allHight = $("#terminalField").height() + 30;
-	
-	if(outputLineArray.length-1 > maxLines)
-	{
-		output = "";
-		for(var i = 1; i < outputLineArray.length; i++)
-			if(outputLineArray[i] != "" && outputLineArray[i] != " ")
-				output += outputLineArray[i] + "<br />";
+	$("#terminalField").append($(start + str + end), $("<br />"));
+		
+	if(desiredHight == null){
+		desiredHight = $("#container").height()
 	}
-
-	$("#terminalField").html(output);
 	
-	//console.log(allHight)
+	while($("#terminalField").height() + 50 > desiredHight){
+		$("#terminalField").find("span").first().remove();
+		$("#terminalField").find("br").first().remove();		
+	}
 }
