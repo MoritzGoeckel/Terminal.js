@@ -1,33 +1,116 @@
 @font-face {
-    font-family: "Dejavu";
-    src: url("font.ttf") format("truetype");
+    font-family: "ocra";
+    src: url("ocra.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "eurostyle";
+    src: url("eurostyle.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "microstyle";
+    src: url("microstyle.otf");
 }
 
 body{
-	font-family: "Dejavu", Verdana, Tahoma;
+	font-family: "ocra", Verdana, Tahoma;
 	background: black;
+	
+	line-height: 1.3em;
+    font-size: 1.5em;
 }
 
-.green{
-	color: #00FF00;
+#inputField{
+    display: block;
+    margin-top: -15px;
 }
 
-.white{
+.input{
 	color: white;
+	
+	margin-top: -15px;
+	margin-bottom: -15px;
 }
 
-.red{
-	color: red;
+.color_one{
+	color: white;
+	display: block;
+	
+	margin-top: -15px;
+	margin-bottom: -15px;
 }
 
-.blue{
+.color_two{
+	color: #ffbc00;
+	display: block;
+	
+	margin-top: -15px;
+	margin-bottom: -15px;
+}
+
+.color_three{
 	color: blue;
+	display: block;
+	
+	margin-top: -15px;
+	margin-bottom: -15px;
+}
+
+.flag{
+	font-family: "microstyle", Verdana, Tahoma;
+	color: black;
+	background-color: #ffbc00;
+	padding: 15px 15px 12px 15px;
+	font-size: 2em;
+	line-height: 1.7em;
+	
+	display: block;
+	
+	position: relative;
+    top: 2px;
+}
+
+.highlight{
+	font-family: "microstyle", Verdana, Tahoma;
+    color: black;
+    background-color: white;
+    padding: 5px 0px 0px 5px;
+    font-size: 1.3em;
+	
+	width: 100%;
+	display: block;
+	
+	position: relative;
+    top: 4px;
+}
+
+.error{
+	font-family: "microstyle", Verdana, Tahoma;
+	color: black;
+	background-color: #ff0000;
+	padding: 15px 15px 12px 15px;
+	font-size: 2em;
+	line-height: 1.7em;
+	
+	display: block;
+	
+	position: relative;
+    top: 2px;
 }
 
 #container{
 	width: 100%;
 	height: 100%;
 	z-index: 0;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 1000px) {
+	#container{
+		width: 50%;
+		margin: 0 auto;
+	}
 }
 
 canvas{

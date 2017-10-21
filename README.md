@@ -17,16 +17,12 @@ A terminal like UI for the web
 		<span id="inputField"></span>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="sketch.min.js"> </script>
-		
 		<script src="terminal.js"> </script>
-		<script src="particles.js"> </script>
 		<script>
 			setMaxLines(10);
 			printLine("Do an input", "red");
 			addInputListener(function(line){
 				printLine("You: " + line, "white");
-				spawnParticles();
 			});
 		</script>
 	</div>

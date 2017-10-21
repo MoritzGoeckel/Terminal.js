@@ -31,7 +31,9 @@ $().ready(function(){
 			renderInput(); 
 		}, 500);
 	
-	console.log("Init finished");
+	desiredHight = $("#container").height()
+	
+	console.log("Init finished " + desiredHight);
 });
 
 inputIndex = 0;
@@ -125,14 +127,14 @@ function processKey(key, ingoreCtrl = false)
 
 function renderInput()
 {
-	$("#inputField").html("<span class='green'>" + input.substr(0, input.length - inputIndex) + (showBlock ? "<span class='green'>&block;</span>" : "  ") + input.substr(input.length - inputIndex) + "</span>");
+	$("#inputField").html("<span class='input'>" + input.substr(0, input.length - inputIndex) + (showBlock ? "<span class='input'>&block;</span>" : "  ") + input.substr(input.length - inputIndex) + "</span>");
 }
 
 function submitInput(line)
 {
 	if(line != "" && line != " ")
 	{
-		printLine(line, "green");
+		printLine(line, "color_one");
 		for(var i = 0; i < listeners.length; i++)
 			listeners[i](line);
 	}
@@ -159,6 +161,9 @@ function printLine(str, cssClass)
 	
 	output += start + str + end + "<br />";
 	var outputLineArray = output.split('<br />');
+	
+	//var allHight = $("#terminalField").height() + 30;
+	
 	if(outputLineArray.length-1 > maxLines)
 	{
 		output = "";
@@ -168,4 +173,6 @@ function printLine(str, cssClass)
 	}
 
 	$("#terminalField").html(output);
+	
+	//console.log(allHight)
 }
