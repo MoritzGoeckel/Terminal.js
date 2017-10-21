@@ -69,20 +69,42 @@ body{
 	
 	position: relative;
     top: 2px;
+	
+	margin-top: -15px;
+	margin-bottom: -15px;
 }
 
 .highlight{
 	font-family: "microstyle", Verdana, Tahoma;
     color: black;
     background-color: white;
-    padding: 5px 0px 0px 5px;
+    padding: 5px 0px 0px 15px;
     font-size: 1.3em;
 	
-	width: 100%;
 	display: block;
 	
 	position: relative;
-    top: 4px;
+    top: 2px;
+	
+	margin-top: -15px;
+	margin-bottom: -15px;
+}
+
+.highlight_big{
+	font-family: "microstyle", Verdana, Tahoma;
+	color: black;
+	background-color: white;
+	padding: 15px 15px 12px 15px;
+	font-size: 2em;
+	line-height: 1.7em;
+	
+	display: block;
+	
+	position: relative;
+    top: 2px;
+	
+	margin-top: -15px;
+	margin-bottom: -15px;
 }
 
 .error{
@@ -97,6 +119,9 @@ body{
 	
 	position: relative;
     top: 2px;
+	
+	margin-top: -15px;
+	margin-bottom: -15px;
 }
 
 #container{
