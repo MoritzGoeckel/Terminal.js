@@ -5,8 +5,7 @@ A terminal like UI for the web
 ![Terminal JS visualization](https://raw.githubusercontent.com/MoritzGoeckel/TerminalJS/master/terminal_example_visualization.gif)
 
 # Example usage
-´´´html
-
+```html
 <head>
 	<title>Board</title>
 	<link rel="stylesheet" href="style.css" />
@@ -32,5 +31,4 @@ A terminal like UI for the web
 		</script>
 	</div>
 </body>
-
-´´´
+```
