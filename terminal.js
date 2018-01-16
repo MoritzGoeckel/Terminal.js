@@ -42,6 +42,7 @@ moving = false;
 
 function processKey(key, ingoreCtrl = false)
 {
+	console.log(key);
 	if(key == "Backspace")
 	{
 		input = input.substr(0, input.length - inputIndex - 1) + input.substr(input.length - inputIndex);
@@ -108,6 +109,15 @@ function processKey(key, ingoreCtrl = false)
 		if(inputIndex > 0)
 			inputIndex--;
 	}
+	else if(key == "PageUp"){
+		scrollUp();
+	}
+	else if(key == "PageDown"){
+		scrollDown();
+	}
+	else if(key == "End"){
+		scrollToBottom();
+	}
 	else if(key.length == 1 && (ctrlDown == false || ingoreCtrl))
 	{
 		historyIndex = 0;
@@ -149,19 +159,67 @@ function updateLine(str, cssClass){
 	$("#terminalField").find("span").last().replaceWith($("<span class='"+cssClass+"'>" + str + "</span>"));
 }
 
+linebufferUp = [];
+linebufferDown = [];
+
+function scrollUp(){
+	if(linebufferUp.length > 0){
+		if($("#inputField").is(":visible"))
+			 $("#inputField").hide();
+
+		$("#terminalField").prepend($("<br />"));				
+		$("#terminalField").prepend(linebufferUp.shift());
+
+		while($("#terminalField").height() + 100 > desiredHight){
+			let removedElement = $("#terminalField").find("span").last();
+			removedElement.remove();
+			linebufferDown.unshift(removedElement);	
+			
+			$("#terminalField").find("br").last().remove();		
+		}
+	}
+}
+
+function scrollDown(){
+	if(linebufferDown.length > 0){
+		
+		$("#terminalField").append(linebufferDown.shift());
+		$("#terminalField").append($("<br />"));				
+
+		checkRemoveLineUp();
+
+		if(linebufferDown.length == 0){
+			$("#inputField").show();
+		}
+	}
+}
+
+function scrollToBottom(){
+	while(linebufferDown.length > 0)
+		scrollDown();
+}
+
 function printLine(str, cssClass)
 {
 	var start = "<span class='"+cssClass+"'>";
-	var end = "</span>";
+	var end = "</span><br />";
 	
-	$("#terminalField").append($(start + str + end), $("<br />"));
+	let element = $(start + str + end);
+	$("#terminalField").append(element);
 		
 	if(desiredHight == null){
 		desiredHight = $("#container").height()
 	}
 	
+	checkRemoveLineUp();
+}
+
+function checkRemoveLineUp(){
 	while($("#terminalField").height() + 100 > desiredHight){
-		$("#terminalField").find("span").first().remove();
+		let removedElement = $("#terminalField").find("span").first();
+		removedElement.remove();
+		linebufferUp.unshift(removedElement);	
+		
 		$("#terminalField").find("br").first().remove();		
 	}
 }
