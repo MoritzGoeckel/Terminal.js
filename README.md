@@ -1,6 +1,18 @@
 # TerminalJS
 A terminal like UI for the web
 
+# Features / Keys
+* Page up
+* Page down
+* End
+* Arrow up
+* Arrow down
+* Arrow left
+* Arrow right
+* Ctrl + v
+* Typing
+* Enter
+
 # How does it look?
 [Check it out](http://moritzgoeckel.com/TerminalJS/)
 
