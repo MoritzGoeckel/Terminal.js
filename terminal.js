@@ -3,7 +3,6 @@ ctrlDown = false;
 $().ready(function(){
 	
 	$( "body" ).keydown(function(event) {
-		//console.log(event);
 		processKey(event.key);
 	});
 	
@@ -42,7 +41,6 @@ moving = false;
 
 function processKey(key, ingoreCtrl = false)
 {
-	console.log(key);
 	if(key == "Backspace")
 	{
 		input = input.substr(0, input.length - inputIndex - 1) + input.substr(input.length - inputIndex);
