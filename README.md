@@ -2,6 +2,7 @@
 A terminal like UI for the web. [Check it out!](http://moritzgoeckel.com/TerminalJS/)
 
 # Features / Keys
+It supports all the freatures you would expect from a common terminal. This includes a history of commands (Arrow up/down), scrolling (Page up/down), pasting (Ctrl + v) and scrolling down to the bottom (end). Here a full list of commands:
 * Page up
 * Page down
 * End
