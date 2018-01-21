@@ -141,7 +141,7 @@ function submitInput(line)
 {
 	if(line != "" && line != " ")
 	{
-		printLine(line, "color_one");
+		printLine(line);
 		for(var i = 0; i < listeners.length; i++)
 			listeners[i](line);
 	}
@@ -156,6 +156,9 @@ function addInputListener(func)
 var desiredHight = null;
 
 function updateLine(str, cssClass){
+	if(cssClass == null)
+		cssClass = "default_cmd";
+		
 	$("#terminalField").find("span").last().replaceWith($("<span class='"+cssClass+"'>" + str + "</span>"));
 }
 
@@ -201,6 +204,9 @@ function scrollToBottom(){
 
 function printLine(str, cssClass)
 {
+	if(cssClass == null)
+		cssClass = "default_cmd";
+		
 	var start = "<span class='"+cssClass+"'>";
 	var end = "</span><br />";
 	

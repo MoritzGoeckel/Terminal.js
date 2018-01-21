@@ -3,6 +3,7 @@
 	<head>
 		<title>Board</title>
 		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="updated.css" />
 	</head>
 
 	<body>
@@ -16,33 +17,24 @@
 			<script>
 				function countdown(){
 					let number = 10;
-					printLine(number, "flag")
+					printLine(number)
 					let interval = setInterval(function(){
-						updateLine(--number, "flag")
+						updateLine(--number, "color_two")
 						if(number == 0){
 							clearInterval(interval);
-							printLine("Done!", "highlight")
+							printLine("Done!")
 						}
 					}, 500);
 				}
 				
-				printLine("Do an input", "highlight");
+				printLine("Do an input");
 				addInputListener(function(line){
 				
-					printLine("You: " + line, "color_two");
-					if(line == "error" || line == "flag" || line == "highlight" || line == "highlight_big")
-						printLine(line, line);
+					printLine("You: " + line);
 						
 					if(line == "init")
 						countdown();
-					
-					if(line == "all"){
-						printLine("hallo", "error");
-						printLine("hallo", "flag");
-						printLine("hallo", "highlight");
-						printLine("hallo", "highlight_big");
-					}
-					
+										
 					if(line == "clear")
 						clear();
 				});
