@@ -1,38 +1,29 @@
 @font-face {
-    font-family: "ocra";
-    src: url("ocr-a.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "eurostyle";
-    src: url("eurostyle.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "microstyle";
-    src: url("microstyle.otf");
+    font-family: "dos";
+    src: url("dos.ttf");
 }
 
 body{
 	color: rgb(0, 255, 0);
-	/*text-shadow: 0px 0px 5px rgba(0, 255, 0, 0.8);*/
+	text-shadow: 0px 0px 50px rgba(0, 255, 0, 0.8);
 	
-	font-family: "ocra", Verdana, Tahoma;
+	font-family: "dos", Verdana, Tahoma;
 	
 	background-color: black;
-	
-	line-height: 1.3em;
-    font-size: 1.3em;
+		
+	line-height: 1em;
+    font-size: 2em;
 }
 
 #inputField{
     display: block;
-    margin-top: -15px;
+	
+	margin-top: -15px;
+	margin-bottom: -15px;
 }
 
 .input{
-	margin-top: -15px;
-	margin-bottom: -15px;
+
 }
 
 .default_cmd{

@@ -19,7 +19,7 @@
 					let number = 10;
 					printLine(number)
 					let interval = setInterval(function(){
-						updateLine(--number, "color_two")
+						updateLine(--number)
 						if(number == 0){
 							clearInterval(interval);
 							printLine("Done!")
@@ -30,7 +30,7 @@
 				printLine("Do an input");
 				addInputListener(function(line){
 				
-					printLine("You: " + line);
+					printLine(">>> " + line);
 						
 					if(line == "init")
 						countdown();
